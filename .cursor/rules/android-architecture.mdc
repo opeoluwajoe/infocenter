@@ -1,0 +1,12 @@
+---
+description: MVVM and data-layer patterns for features
+globs: app/src/main/java/**/*.kt
+alwaysApply: false
+---
+
+# Architecture
+
+- Flow: UI → ViewModel → Repository → Retrofit API (never call APIs from composables)
+- Use `UiState` sealed types: `Loading`, `Success`, `Error(message)`
+- Repository exposes `suspend` functions; ViewModels use `viewModelScope`
+- Pass only IDs through navigation (e.g. `postId`); fetch detail in the detail ViewModel

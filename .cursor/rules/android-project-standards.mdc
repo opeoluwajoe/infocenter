@@ -1,0 +1,12 @@
+---
+description: Core Android Kotlin and Compose conventions for this app
+alwaysApply: true
+---
+
+# Android Project Standards
+
+- Kotlin only; Jetpack Compose + Material 3 (no XML layouts or View system UI)
+- Package layout: `data/` (api, model, repository), `ui/` (screens, navigation, theme)
+- Naming: `*Screen`, `*ViewModel`, `*Repository`, `*ApiService`
+- Keep composables stateless; hold state in ViewModels via `StateFlow` and `collectAsStateWithLifecycle`
+- Reuse the existing theme under `ui/theme/`

@@ -1,0 +1,12 @@
+---
+description: Networking and manifest requirements
+globs: app/src/main/**/*
+alwaysApply: false
+---
+
+# Networking
+
+- Declare `INTERNET` in `AndroidManifest.xml`
+- Retrofit interfaces live in `data/api/`; DTOs in `data/model/` with Gson annotations
+- Base URL: `https://jsonplaceholder.typicode.com/` via Retrofit builder
+- Map failures to user-readable messages in `UiState.Error` (no silent catch blocks)
